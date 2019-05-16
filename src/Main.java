@@ -20,15 +20,20 @@ public class Main {
         catch(Exception e){
             e.printStackTrace();
         }
-
         Scanner read = new Scanner(System.in);
-        System.out.println("Enter a word to lookup!");
-        String word = read.nextLine();
-        if(dictionary.get(word)!=null){
-            System.out.println("Word: "+ word + "\nDefinition: " + dictionary.get(word));
-        }
-        else {
-            System.out.println("Word Not Found");
+        String word="";
+        while(!word.equals("q")){
+            System.out.println("Enter a word to lookup. Enter q to quit");
+            word = read.nextLine();
+            if(dictionary.get(word)!=null){
+                System.out.println("Word: "+ word + "\nDefinition: " + dictionary.get(word));
+            }
+            else if(word.equals("q")){
+                System.out.println(" ");
+            }
+            else {
+                System.out.println("Word Not Found");
+            }
         }
 
     }
